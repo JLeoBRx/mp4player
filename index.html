@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos Personalizados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #add8e6; /* Azul Claro */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .video-block {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00000033;
+            max-width: 360px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            max-height: 640px; /* diminui o tamanho */
+            background: black;
+            border-radius: 10px;
+        }
+        button {
+            font-size: 14px;
+            margin: 10px 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assista aos Vídeos (Sindria):</h1>
+
+    <div class="container">
+        <div class="video-block">
+            <h3>Vídeo 1</h3>
+            <video id="video1" src="video1.mp4"></video><br>
+            <button onclick="playVideo('video1')">▶ Play</button>
+            <button onclick="pauseVideo('video1')">⏸ Pause</button>
+            <button onclick="restartVideo('video1')">🔄 Reiniciar</button>
+        </div>
+
+        <div class="video-block">
+            <h3>Vídeo 2</h3>
+            <video id="video2" src="video2.mp4"></video><br>
+            <button onclick="playVideo('video2')">▶ Play</button>
+            <button onclick="pauseVideo('video2')">⏸ Pause</button>
+            <button onclick="restartVideo('video2')">🔄 Reiniciar</button>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(id) {
+            const video = document.getElementById(id);
+            video.play();
+        }
+
+        function pauseVideo(id) {
+            const video = document.getElementById(id);
+            video.pause();
+        }
+
+        function restartVideo(id) {
+            const video = document.getElementById(id);
+            video.currentTime = 0;
+            video.play();
+        }
+    </script>
+</body>
+</html>
